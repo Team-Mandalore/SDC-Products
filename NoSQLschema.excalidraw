@@ -1,0 +1,46 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor",
+  "elements": [
+    {
+      "id": "dHx0pJb5L_0qyUZOaDaMq",
+      "type": "text",
+      "x": 511,
+      "y": 136.16666666666674,
+      "width": 1996,
+      "height": 2236,
+      "angle": 0,
+      "strokeColor": "#000000",
+      "backgroundColor": "transparent",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "strokeSharpness": "sharp",
+      "seed": 1970405047,
+      "version": 94,
+      "versionNonce": 466466681,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1658870052500,
+      "link": null,
+      "locked": false,
+      "text": "[\n  {\n        \"id\": 1,\n        \"name\": \"Camo Onesie\",\n        \"slogan\": \"Blend in to your crowd\",\n        \"description\": \"The So Fatigues will wake you up and fit you in. This high energy camo will have you blending in to even the wildest surroundings.\",\n        \"category\": \"Jackets\",\n        \"default_price\": \"140\"\n        \"features\": [\n              {\n                \"feature\": \"Sole\",\n                \"value\": \"Rubber\"\n            },\n              {\n                \"feature\": \"Material\",\n                \"value\": \"FullControlSkin\"\n            },\n              // ...\n         ],\n         \"results\": [\n          {\n            \"style_id\": 1,\n            \"name\": \"Forest Green & Black\",\n            \"original_price\": \"140\",\n            \"sale_price\": \"0\",\n            \"default?\": true,\n            \"photos\": [\n                          {\n                    \"thumbnail_url\": \"urlplaceholder/style_1_photo_number_thumbnail.jpg\",\n                    \"url\": \"urlplaceholder/style_1_photo_number.jpg\"\n                },\n                          {\n                    \"thumbnail_url\": \"urlplaceholder/style_1_photo_number_thumbnail.jpg\",\n                    \"url\": \"urlplaceholder/style_1_photo_number.jpg\"\n                }\n                          // ...\n            ],\n        \"skus\": {\n                        \"37\": {\n                                    \"quantity\": 8,\n                                    \"size\": \"XS\"\n                        },\n                        \"38\": {\n                                    \"quantity\": 16,\n                                    \"size\": \"S\"\n                        },\n                        \"39\": {\n                                    \"quantity\": 17,\n                                    \"size\": \"M\"\n                        },\n            //...\n                    }\n    },\n  {\n        \"style_id\": 2,\n        \"name\": \"Desert Brown & Tan\",\n        \"original_price\": \"140\",\n        \"sale_price\": \"0\",\n        \"default?\": false,\n        \"photos\": [\n                          {\n                    \"thumbnail_url\": \"urlplaceholder/style_2_photo_number_thumbnail.jpg\",\n                    \"url\": \"urlplaceholder/style_2_photo_number.jpg\"\n        }\n      // ...\n            ],\n        \"skus\": {\n                        \"37\": {\n                                    \"quantity\": 8,\n                                    \"size\": \"XS\"\n                        },\n                        \"38\": {\n                                    \"quantity\": 16,\n                                    \"size\": \"S\"\n                        },\n                        \"39\": {\n                                    \"quantity\": 17,\n                                    \"size\": \"M\"\n                        },\n            //...\n                    }\n    },\n  // ...\n    },\n    // ...\n]",
+      "fontSize": 21.841085271317827,
+      "fontFamily": 3,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "baseline": 2231,
+      "containerId": null,
+      "originalText": "[\n  {\n        \"id\": 1,\n        \"name\": \"Camo Onesie\",\n        \"slogan\": \"Blend in to your crowd\",\n        \"description\": \"The So Fatigues will wake you up and fit you in. This high energy camo will have you blending in to even the wildest surroundings.\",\n        \"category\": \"Jackets\",\n        \"default_price\": \"140\"\n        \"features\": [\n              {\n                \"feature\": \"Sole\",\n                \"value\": \"Rubber\"\n            },\n              {\n                \"feature\": \"Material\",\n                \"value\": \"FullControlSkin\"\n            },\n              // ...\n         ],\n         \"results\": [\n          {\n            \"style_id\": 1,\n            \"name\": \"Forest Green & Black\",\n            \"original_price\": \"140\",\n            \"sale_price\": \"0\",\n            \"default?\": true,\n            \"photos\": [\n                          {\n                    \"thumbnail_url\": \"urlplaceholder/style_1_photo_number_thumbnail.jpg\",\n                    \"url\": \"urlplaceholder/style_1_photo_number.jpg\"\n                },\n                          {\n                    \"thumbnail_url\": \"urlplaceholder/style_1_photo_number_thumbnail.jpg\",\n                    \"url\": \"urlplaceholder/style_1_photo_number.jpg\"\n                }\n                          // ...\n            ],\n        \"skus\": {\n                        \"37\": {\n                                    \"quantity\": 8,\n                                    \"size\": \"XS\"\n                        },\n                        \"38\": {\n                                    \"quantity\": 16,\n                                    \"size\": \"S\"\n                        },\n                        \"39\": {\n                                    \"quantity\": 17,\n                                    \"size\": \"M\"\n                        },\n            //...\n                    }\n    },\n  {\n        \"style_id\": 2,\n        \"name\": \"Desert Brown & Tan\",\n        \"original_price\": \"140\",\n        \"sale_price\": \"0\",\n        \"default?\": false,\n        \"photos\": [\n                          {\n                    \"thumbnail_url\": \"urlplaceholder/style_2_photo_number_thumbnail.jpg\",\n                    \"url\": \"urlplaceholder/style_2_photo_number.jpg\"\n        }\n      // ...\n            ],\n        \"skus\": {\n                        \"37\": {\n                                    \"quantity\": 8,\n                                    \"size\": \"XS\"\n                        },\n                        \"38\": {\n                                    \"quantity\": 16,\n                                    \"size\": \"S\"\n                        },\n                        \"39\": {\n                                    \"quantity\": 17,\n                                    \"size\": \"M\"\n                        },\n            //...\n                    }\n    },\n  // ...\n    },\n    // ...\n]"
+    }
+  ],
+  "appState": {
+    "gridSize": null,
+    "viewBackgroundColor": "#ffffff"
+  },
+  "files": {}
+}
