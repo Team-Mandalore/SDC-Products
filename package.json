@@ -1,0 +1,12 @@
+{
+  "name": "sdc-products",
+  "version": "0.0.1",
+  "description": "Products service for Project Atelier API rebuild",
+  "main": "index.js",
+  "repository": "https://github.com/Team-Mandalore/SDC-Products.git",
+  "author": "sbirvin1s <sbirvin1s@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.27.2"
+  }
+}
