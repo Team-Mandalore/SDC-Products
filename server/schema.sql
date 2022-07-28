@@ -1,0 +1,71 @@
+/*========== DATABASE ==========*/
+
+DROP TABLE IF EXISTS products CASCADE;
+DROP TABLE IF EXISTS features CASCADE;
+DROP TABLE IF EXISTS styles CASCADE;
+DROP TABLE IF EXISTS photos CASCADE;
+DROP TABLE IF EXISTS skus CASCADE;
+
+CREATE TABLE IF NOT EXISTS products (
+  id                   SERIAL PRIMARY KEY,
+  product_name         VARCHAR(100),
+  slogan               TEXT,
+  product_description  TEXT,
+  category             VARCHAR(20),
+  default_price        VARCHAR(10)
+);
+
+COPY products
+FROM '/home/sbirvin1s/hackreactor/SDC-Products/product.csv'
+DELIMITER ','
+CSV HEADER;
+
+CREATE TABLE IF NOT EXISTS features (
+  id                   SERIAL PRIMARY KEY,
+  product_id           SERIAL REFERENCES products (id),
+  feature              VARCHAR(100),
+  feature_value        VARCHAR(150)
+);
+
+COPY features
+FROM '/home/sbirvin1s/hackreactor/SDC-Products/features.csv'
+DELIMITER ','
+CSV HEADER;
+
+CREATE TABLE IF NOT EXISTS styles (
+  id                   SERIAL PRIMARY KEY,
+  product_id           SERIAL REFERENCES products (id),
+  style_name           VARCHAR(50),
+  original_price       VARCHAR(10),
+  sale_price           VARCHAR(10),
+  styles_default              BOOLEAN
+);
+
+COPY styles
+FROM '/home/sbirvin1s/hackreactor/SDC-Products/styles.csv'
+DELIMITER ','
+CSV HEADER;
+
+CREATE TABLE IF NOT EXISTS photos (
+  photo_id             SERIAL PRIMARY KEY,
+  style_id             SERIAL REFERENCES styles,
+  thumbnail_url        TEXT,
+  photo_url            TEXT
+);
+
+COPY photos
+FROM '/home/sbirvin1s/hackreactor/SDC-Products/photos.csv'
+DELIMITER ','
+CSV HEADER;
+
+CREATE TABLE IF NOT EXISTS skus (
+  sku_id               SERIAL PRIMARY KEY,
+  style_id             SERIAL REFERENCES styles,
+  size                 VARCHAR(10),
+  quantity             INTEGER
+);
+
+COPY skus
+FROM '/home/sbirvin1s/hackreactor/SDC-Products/skus.csv'
+DELIMITER ','
+CSV HEADER;

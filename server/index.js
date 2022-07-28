@@ -4,6 +4,7 @@ const express = require('express');
 
 
 /*========== INTERNAL MODULES ==========*/
+const {find,} = require('./router/routes');
 
 
 const app = express();
@@ -17,7 +18,7 @@ app.use(express.json());
 
 
 /*========== ROUTES ==========*/
-app.get('/', /* some function */)
+app.get('/', find);
 
 
 

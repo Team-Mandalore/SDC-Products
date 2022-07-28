@@ -4,12 +4,18 @@ const express = require('express');
 
 
 /*========== INTERNAL MODULES ==========*/
+const {retrieve} = require('../db');
 
 
 
 /*========== ROUTES ==========*/
-app.get('/', /* some function */)
+const find = (req, res) => {
+  res.json(req.body);
+}
 
 
 
 /*========== EXPORTS ==========*/
+module.exports = {
+  find,
+}
