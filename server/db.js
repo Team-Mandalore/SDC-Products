@@ -25,11 +25,24 @@ pool.connect((err) => {
 
 
 /*========== DATABASE METHODS ==========*/
-const retrieve = () => {
+const retrieveProduct = () => {
+  // will take a page and count limit
+  // SELECT * FROM <products> WHERE id='?'
+  // if page and count limit is provided, insert as a limit to the SELECT query
+  // possible need for joins to add photos and other information
+}
 
+const retrieveProductInfo = () => {
+  // returns one product and all it's features
+}
+
+const retrieveProductStyles = () => {
+  // returns the product id and a list of all its styles
 }
 
 /*========== EXPORTS ==========*/
 module.exports = {
-  retrieve,
+  retrieveProduct,
+  retrieveProductInfo,
+  retrieveProductStyles,
 }
