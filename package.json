@@ -3,14 +3,17 @@
   "version": "0.0.1",
   "description": "Products service for Project Atelier API rebuild",
   "main": "./server/index.js",
+  "scripts": {
+    "server-dev": "npx nodemon --watch server server/index.js"
+  },
   "repository": "https://github.com/Team-Mandalore/SDC-Products.git",
   "author": "sbirvin1s <sbirvin1s@gmail.com>",
-  "license": "MIT",
+  "license": "Unlicensed",
   "dependencies": {
     "axios": "^0.27.2",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "pg": "^8.7.3",
-    "sequelize": "^6.21.3"
+    "pg-promise": "^10.11.1"
   }
 }
