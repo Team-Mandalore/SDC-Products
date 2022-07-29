@@ -35,7 +35,13 @@ const retrieveProductInfo = (id) => {
   .then(res => product = res.rows[0])
   .then(() => pool.query('SELECT * FROM features WHERE product_id=($1)', [id]))
   .then(res => {
-      product.features = res.rows
+      let features = res.rows.forEach(feature => {
+        feature.value = feature.feature_value;
+        delete feature.id;
+        delete feature.product_id;
+        delete feature.feature_value;
+      })
+      product.features = res.rows;
       return product;
     })
   .catch(err => `Unable to retrieve the product due to ${err}`);
