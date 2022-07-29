@@ -30,11 +30,15 @@ const retrieveProducts = (page = 0, count = 5) => {
 }
 
 const retrieveProductInfo = (id) => {
-  // returns one product and all it's features
+  let product = {};
   return pool.query('SELECT * FROM products WHERE id=($1)', [id])
-  .then(res => res.rows)
-  .catch(err => `Unable to retrieve the product due to ${err}`)
-  // .push(pool.query('SELECT * FROM features WHERE product_id=($1)', [id]))
+  .then(res => product = res.rows[0])
+  .then(() => pool.query('SELECT * FROM features WHERE product_id=($1)', [id]))
+  .then(res => {
+      product.features = res.rows
+      return product;
+    })
+  .catch(err => `Unable to retrieve the product due to ${err}`);
 }
 
 const retrieveProductStyles = () => {
