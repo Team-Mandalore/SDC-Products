@@ -31,7 +31,7 @@ const retrieveProducts = (page = 0, count = 5) => {
     page = page * count;
   }
 
-  pool.query('SELECT * FROM products OFFSET ($1) ROWS LIMIT ($2)', [page, count])
+  return pool.query('SELECT * FROM products OFFSET ($1) ROWS LIMIT ($2)', [page, count])
   .then(res => res.rows)
   .catch(err => `Unable to retrieve the product due to ${err}`)
 }

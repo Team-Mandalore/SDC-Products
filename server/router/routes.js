@@ -10,11 +10,8 @@ const {retrieveProducts, retrieveProductInfo, retrieveProductStyles} = require('
 
 /*========== ROUTES ==========*/
 const findAll = (req, res) => {
-  retrieveProducts(req.params.page, req.params.count)
-  .then(response => {
-    res.json(response)
-    res.sendStatus(200);
-  })
+  retrieveProducts(req.query.page, req.query.count)
+  .then(response => res.json(response))
   .catch(err => console.error(`Unable to get products due to ${err}`))
 }
 
