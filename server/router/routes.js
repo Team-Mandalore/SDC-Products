@@ -15,8 +15,11 @@ const findAll = (req, res) => {
   .catch(err => console.error(`Unable to get products due to ${err}`))
 }
 
-const findProduct = (req, res) => {
-  res.json(req.body);
+const findInfo = (req, res) => {
+  retrieveProductInfo(req.params.product_id)
+  .then(response => res.json(response))
+  .catch(err => console.error(`Unable to get products due to ${err}`))
+  // res.json(req.body);
 }
 
 const findStyles = (req, res) => {
@@ -27,6 +30,6 @@ const findStyles = (req, res) => {
 /*========== EXPORTS ==========*/
 module.exports = {
   findAll,
-  findProduct,
+  findInfo,
   findStyles,
 }

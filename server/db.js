@@ -20,13 +20,6 @@ pool.connect()
 
 /*========== DATABASE METHODS ==========*/
 const retrieveProducts = (page = 0, count = 5) => {
-  // will take a page and count limit
-  // SELECT * FROM <products> WHERE id='?'
-  // if page and count limit is provided, insert as a limit to the SELECT query
-  // possible need for joins to add photos and other information
-
-  // if page is greater than 0
-    // set the value of page to equal page multiplied by the value of count
   if (page > 0){
     page = page * count;
   }
@@ -36,8 +29,12 @@ const retrieveProducts = (page = 0, count = 5) => {
   .catch(err => `Unable to retrieve the product due to ${err}`)
 }
 
-const retrieveProductInfo = () => {
+const retrieveProductInfo = (id) => {
   // returns one product and all it's features
+  return pool.query('SELECT * FROM products WHERE id=($1)', [id])
+  .then(res => res.rows)
+  .catch(err => `Unable to retrieve the product due to ${err}`)
+  // .push(pool.query('SELECT * FROM features WHERE product_id=($1)', [id]))
 }
 
 const retrieveProductStyles = () => {

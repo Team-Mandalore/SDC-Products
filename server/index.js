@@ -4,7 +4,7 @@ const express = require('express');
 
 
 /*========== INTERNAL MODULES ==========*/
-const {findAll, findProduct, findStyles} = require('./router/routes');
+const {findAll, findInfo, findStyles} = require('./router/routes');
 
 
 const app = express();
@@ -19,7 +19,7 @@ app.use(express.json());
 
 /*========== ROUTES ==========*/
 app.get('/products', findAll);
-app.get('/products/:product_id', findProduct);  // returns all product level information for a specified product id
+app.get('/products/:product_id', findInfo);  // returns all product level information for a specified product id
 app.get('/products/:product_id/styles', findStyles);
 
 
