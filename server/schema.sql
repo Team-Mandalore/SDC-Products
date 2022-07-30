@@ -48,7 +48,7 @@ CSV HEADER;
 
 CREATE TABLE IF NOT EXISTS photos (
   photo_id             SERIAL PRIMARY KEY,
-  style_id             SERIAL REFERENCES styles,
+  style_id             SERIAL REFERENCES styles (product_id),
   thumbnail_url        TEXT,
   photo_url            TEXT
 );
@@ -60,7 +60,7 @@ CSV HEADER;
 
 CREATE TABLE IF NOT EXISTS skus (
   sku_id               SERIAL PRIMARY KEY,
-  style_id             SERIAL REFERENCES styles,
+  style_id             SERIAL REFERENCES styles (product_id),
   size                 VARCHAR(10),
   quantity             INTEGER
 );

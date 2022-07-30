@@ -31,24 +31,29 @@ const retrieveProducts = (page = 0, count = 5) => {
 
 const retrieveProductInfo = (id) => {
   let product = {};
+  // return pool.query('SELECT row_to_json(prod) AS product FROM (SELECT *, (SELECT json_agg(features) FROM (SELECT feature, feature_value AS value FROM features WHERE product_id=p.id) features) AS features FROM products p) prod WHERE id=($1)', [id])
+  // .then(res => res.rows[0])
   return pool.query('SELECT * FROM products WHERE id=($1)', [id])
   .then(res => product = res.rows[0])
-  .then(() => pool.query('SELECT * FROM features WHERE product_id=($1)', [id]))
+  .then(() => pool.query('SELECT feature, feature_value as value FROM features WHERE product_id=($1)', [id]))
   .then(res => {
-      let features = res.rows.forEach(feature => {
-        feature.value = feature.feature_value;
-        delete feature.id;
-        delete feature.product_id;
-        delete feature.feature_value;
-      })
       product.features = res.rows;
       return product;
     })
   .catch(err => `Unable to retrieve the product due to ${err}`);
 }
 
-const retrieveProductStyles = () => {
+const retrieveProductStyles = (id) => {
   // returns the product id and a list of all its styles
+  let product = {};
+  return pool.query('SELECT id as product_id FROM products WHERE id=($1)', [id])
+  .then(res => product = res.row[0])
+  .then(() => pool.query('SELECT style_id, name, original_price, sale_price, styles_default as default? FROM styles WHERE product_id=($1)', [id]))
+  .then(res => product.features = res.rows)
+  .then(() => pool.query('SELECT thumbnail_url, photo_url as url FROM photos WHERE style_id=($1)', [id]))
+  .then(res => product.features.photos = res.rows)
+  .then(() => pool.query('SELECT '))
+  .catch(err => `Unable to retrieve the product due to ${err}`);
 }
 
 /*========== EXPORTS ==========*/

@@ -19,7 +19,6 @@ const findInfo = (req, res) => {
   retrieveProductInfo(req.params.product_id)
   .then(response => res.json(response))
   .catch(err => console.error(`Unable to get products due to ${err}`))
-  // res.json(req.body);
 }
 
 const findStyles = (req, res) => {
