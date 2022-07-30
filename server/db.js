@@ -19,12 +19,15 @@ pool.connect()
 .catch(err => console.error(`Unable to connect due to ${err}`))
 
 /*========== DATABASE METHODS ==========*/
-const retrieveProducts = (page = 0, count = 5) => {
-  if (page > 0){
-    page = page * count;
+const retrieveProducts = (page = 1, count = 5) => {
+  let offset = page - 1;
+  if (offset < 0) {
+    offset = 0;
+  } else if (offset > 0) {
+    offset = offset * count;
   }
 
-  return pool.query('SELECT * FROM products OFFSET ($1) ROWS LIMIT ($2)', [page, count])
+  return pool.query('SELECT * FROM products OFFSET ($1) ROWS LIMIT ($2)', [offset, count])
   .then(res => res.rows)
   .catch(err => `Unable to retrieve the product due to ${err}`)
 }
