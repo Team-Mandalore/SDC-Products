@@ -1,10 +1,10 @@
 /*========== DATABASE ==========*/
 
--- DROP TABLE IF EXISTS products CASCADE;
--- DROP TABLE IF EXISTS features CASCADE;
--- DROP TABLE IF EXISTS styles CASCADE;
--- DROP TABLE IF EXISTS photos CASCADE;
--- DROP TABLE IF EXISTS skus CASCADE;
+DROP TABLE IF EXISTS products CASCADE;
+DROP TABLE IF EXISTS features CASCADE;
+DROP TABLE IF EXISTS styles CASCADE;
+DROP TABLE IF EXISTS photos CASCADE;
+DROP TABLE IF EXISTS skus CASCADE;
 
 CREATE TABLE IF NOT EXISTS products (
   id                   SERIAL PRIMARY KEY,
@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS features (
   id                   SERIAL PRIMARY KEY,
   product_id           SERIAL REFERENCES products (id),
   feature              VARCHAR(100),
-  feature_value        VARCHAR(150)
+  value                VARCHAR(150)
 );
 
 COPY features
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS styles (
   style_name           VARCHAR(50),
   original_price       VARCHAR(10),
   sale_price           VARCHAR(10),
-  styles_default              BOOLEAN
+  "default?"           BOOLEAN
 );
 
 COPY styles
@@ -48,7 +48,7 @@ CSV HEADER;
 
 CREATE TABLE IF NOT EXISTS photos (
   photo_id             SERIAL PRIMARY KEY,
-  style_id             SERIAL REFERENCES styles (product_id),
+  style_id             SERIAL REFERENCES styles (id),
   thumbnail_url        TEXT,
   photo_url            TEXT
 );
@@ -60,7 +60,7 @@ CSV HEADER;
 
 CREATE TABLE IF NOT EXISTS skus (
   sku_id               SERIAL PRIMARY KEY,
-  style_id             SERIAL REFERENCES styles (product_id),
+  style_id             SERIAL REFERENCES styles (id),
   size                 VARCHAR(10),
   quantity             INTEGER
 );
