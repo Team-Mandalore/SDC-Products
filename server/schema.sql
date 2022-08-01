@@ -35,7 +35,7 @@ CSV HEADER;
 CREATE TABLE IF NOT EXISTS styles (
   id                   SERIAL PRIMARY KEY,
   product_id           SERIAL REFERENCES products (id),
-  style_name           VARCHAR(50),
+  name                 VARCHAR(50),
   original_price       VARCHAR(10),
   sale_price           VARCHAR(10),
   "default?"           BOOLEAN
@@ -59,7 +59,7 @@ DELIMITER ','
 CSV HEADER;
 
 CREATE TABLE IF NOT EXISTS skus (
-  sku_id               SERIAL PRIMARY KEY,
+  sku_id               SERIAL PRIMARY KEY NOT NULL,
   style_id             SERIAL REFERENCES styles (id),
   size                 VARCHAR(10),
   quantity             INTEGER
