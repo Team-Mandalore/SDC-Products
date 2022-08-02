@@ -26,6 +26,8 @@ export const options = {
 };
 
 export default function() {
-  http.get('http://localhost:3000/products');
+  let page = Math.floor(Math.random() * 999);
+  let count = Math.floor(Math.random() * 999);
+  http.get(`http://localhost:3000/products?page=${page}&count=${count}`);
   sleep(1);
 }
