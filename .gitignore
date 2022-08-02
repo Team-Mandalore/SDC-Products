@@ -1,6 +1,8 @@
 node_modules
 .env
 *.csv
+*.pem
+
 
 package-lock.json
 
