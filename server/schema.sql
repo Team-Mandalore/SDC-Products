@@ -59,7 +59,7 @@ DELIMITER ','
 CSV HEADER;
 
 CREATE TABLE IF NOT EXISTS skus (
-  sku_id               SERIAL PRIMARY KEY NOT NULL,
+  sku_id               SERIAL PRIMARY KEY,
   style_id             SERIAL REFERENCES styles (id),
   size                 VARCHAR(10),
   quantity             INTEGER
@@ -69,3 +69,8 @@ COPY skus
 FROM '/home/sbirvin1s/hackreactor/SDC-Products/skus.csv'
 DELIMITER ','
 CSV HEADER;
+
+CREATE INDEX IF NOT EXISTS features_products ON features (product_id);
+CREATE INDEX IF NOT EXISTS styles_products ON styles (product_id);
+CREATE INDEX IF NOT EXISTS photos_styles ON photos (style_id);
+CREATE INDEX IF NOT EXISTS skus_styles ON skus (style_id);

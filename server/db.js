@@ -47,7 +47,7 @@ const retrieveProductInfo = (id) => {
   // .then(res => res.rows[0])
   return pool.query('SELECT * FROM products WHERE id=($1)', [id])
   .then(res => product = res.rows[0])
-  .then(() => pool.query('SELECT feature, feature_value as value FROM features WHERE product_id=($1)', [id]))
+  .then(() => pool.query('SELECT feature, value FROM features WHERE product_id=($1)', [id]))
   .then(res => {
       product.features = res.rows;
       return product;
