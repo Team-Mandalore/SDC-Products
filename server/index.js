@@ -4,7 +4,7 @@ const express = require('express');
 
 
 /*========== INTERNAL MODULES ==========*/
-const {find,} = require('./router/routes');
+const {findAll, findInfo, findStyles} = require('./router/routes');
 
 
 const app = express();
@@ -18,10 +18,11 @@ app.use(express.json());
 
 
 /*========== ROUTES ==========*/
-app.get('/', find);
+app.get('/products', findAll);
+app.get('/products/:product_id', findInfo);
+app.get('/products/:product_id/styles', findStyles);
 
 
 
 /*========== EXPORTS ==========*/
-// app.listen(process.env.PORT, () => console.log(`Listening on port ${process.env.PORT}`));
-app.listen(PORT, () => console.log(`Listening at http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`));

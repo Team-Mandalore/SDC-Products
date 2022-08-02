@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS features (
   id                   SERIAL PRIMARY KEY,
   product_id           SERIAL REFERENCES products (id),
   feature              VARCHAR(100),
-  feature_value        VARCHAR(150)
+  value                VARCHAR(150)
 );
 
 COPY features
@@ -35,10 +35,10 @@ CSV HEADER;
 CREATE TABLE IF NOT EXISTS styles (
   id                   SERIAL PRIMARY KEY,
   product_id           SERIAL REFERENCES products (id),
-  style_name           VARCHAR(50),
+  name                 VARCHAR(50),
   original_price       VARCHAR(10),
   sale_price           VARCHAR(10),
-  styles_default              BOOLEAN
+  "default?"           BOOLEAN
 );
 
 COPY styles
@@ -48,7 +48,7 @@ CSV HEADER;
 
 CREATE TABLE IF NOT EXISTS photos (
   photo_id             SERIAL PRIMARY KEY,
-  style_id             SERIAL REFERENCES styles,
+  style_id             SERIAL REFERENCES styles (id),
   thumbnail_url        TEXT,
   photo_url            TEXT
 );
@@ -59,8 +59,8 @@ DELIMITER ','
 CSV HEADER;
 
 CREATE TABLE IF NOT EXISTS skus (
-  sku_id               SERIAL PRIMARY KEY,
-  style_id             SERIAL REFERENCES styles,
+  sku_id               SERIAL PRIMARY KEY NOT NULL,
+  style_id             SERIAL REFERENCES styles (id),
   size                 VARCHAR(10),
   quantity             INTEGER
 );
