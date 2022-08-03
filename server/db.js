@@ -70,7 +70,7 @@ const retrieveProductStyles = (id) => {
                 SELECT quantity, size WHERE style_id = s.id \
               ) sku_info \
             )) sku_id FROM skus WHERE style_id = s.id\
-        ) AS skus FROM styles s WHERE s.id = product_id \
+        ) AS skus FROM styles s WHERE s.product_id = p.id \
       ) styles \
     ) AS results FROM products p \
   ) prod WHERE product_id=($1)', [id])

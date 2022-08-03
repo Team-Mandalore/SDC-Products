@@ -1,4 +1,5 @@
 /*========== EXTERNAL MODULES ==========*/
+require('newrelic');
 require('dotenv').config();
 const express = require('express');
 
