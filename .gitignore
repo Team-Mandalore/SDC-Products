@@ -1,6 +1,10 @@
 node_modules
 .env
 *.csv
+*.pem
+newrelic.js
+*.log
+
 
 package-lock.json
 
