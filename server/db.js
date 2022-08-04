@@ -48,21 +48,33 @@ const retrieveProductStyles = (id) => {
   let product = {};
   return pool.query('SELECT row_to_json(prod) AS product FROM ( \
     SELECT id AS product_id, ( \
-      SELECT json_agg(styles) FROM ( \
+      SELECT json_agg(styles) \
+      FROM ( \
         SELECT id AS style_id, name, original_price, "default?", ( \
-          SELECT json_agg(photos) FROM ( \
-            SELECT thumbnail_url, photo_url AS url FROM photos WHERE style_id = s.id \
+          SELECT json_agg(photos) \
+          FROM ( \
+            SELECT thumbnail_url, photo_url AS url \
+            FROM photos \
+            WHERE style_id = s.id \
           ) photos \
         ) AS photos, ( \
             SELECT json_object_agg(sku_id, ( \
-              SELECT row_to_json(sku_info) FROM ( \
-                SELECT quantity, size WHERE style_id = s.id \
+              SELECT row_to_json(sku_info) \
+              FROM ( \
+                SELECT quantity, size \
+                WHERE style_id = s.id \
               ) sku_info \
-            )) sku_id FROM skus WHERE style_id = s.id\
-        ) AS skus FROM styles s WHERE s.product_id = p.id \
+            )) sku_id \
+            FROM skus \
+            WHERE style_id = s.id\
+        ) AS skus \
+        FROM styles s \
+        WHERE s.product_id = p.id \
       ) styles \
-    ) AS results FROM products p \
-  ) prod WHERE product_id=($1)', [id])
+    ) AS results \
+    FROM products p \
+  ) prod \
+  WHERE product_id=($1)', [id])
   .then((res) => {
     product = res.rows[0].product;
     product.product_id = product.product_id.toString();
