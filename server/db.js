@@ -34,17 +34,6 @@ const retrieveProducts = (page = 1, count = 5) => {
 
 const retrieveProductInfo = (id) => {
   let product = {};
-  // return pool.query('SELECT row_to_json(prod) AS product FROM ( \
-  //     SELECT *, ( \
-  //       SELECT json_agg(features) FROM ( \
-  //         SELECT feature, value FROM features WHERE product_id=p.id \
-  //       ) features \
-  //     ) AS features FROM products p \
-  //   ) prod WHERE id=($1)', [id]
-  // )
-  // .then(res => res.rows[0].product)
-  // .catch(err => `Unable to retrieve the product due to ${err}`);
-
   return pool.query('SELECT * FROM products WHERE id=($1)', [id])
   .then(res => product = res.rows[0])
   .then(() => pool.query('SELECT feature, value FROM features WHERE product_id=($1)', [id]))
