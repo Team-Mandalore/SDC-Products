@@ -15,6 +15,7 @@ const {PORT} = process.env;
 /*========== MIDDLEWARE ==========*/
 
 app.use(express.json());
+app.use('/loaderio-f201a7b81aa4143450a5fbb2ac42cd29.txt', express.static('./server/loaderio-f201a7b81aa4143450a5fbb2ac42cd29.txt'));
 
 
 
