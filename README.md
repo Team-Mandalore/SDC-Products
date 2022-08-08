@@ -1,6 +1,6 @@
 # SDC-Products
 
-> Project Description
+> The "Products" API service that supplies product information such as styles, sizes, quantities, and skus for the Front-End of an E-Commerce website
 
 ---
 ## Related Projects
@@ -25,9 +25,8 @@
 
 > **Note:** This repo requires that you use the styling outlined in the following guide: [AirBnb Style Guide](https://github.com/airbnb/javascript)
 ---
-## :computer: How can I contribute?
 
-<br/>
+## :computer: How can I contribute?
 
 #### Start with the main branch
 All feature branches are created off the latest code state of a project. This guide assumes this is maintained and updated in the `main` branch.
