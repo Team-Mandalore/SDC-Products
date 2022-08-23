@@ -1,3 +1,10 @@
+<div align="left">
+<img src="https://img.shields.io/github/package-json/dependency-version/RFC2205-Team-Jafar/blue-ocean/react" />
+<img src="https://img.shields.io/github/package-json/dependency-version/RFC2205-Team-Jafar/blue-ocean/webpack" />
+<img src="https://img.shields.io/github/package-json/dependency-version/RFC2205-Team-Jafar/blue-ocean/axios"/>
+<img src="https://img.shields.io/github/package-json/dependency-version/RFC2205-Team-Jafar/blue-ocean/nodemon"/>
+</div>
+
 # SDC-Products
 
 > The "Products" API service that supplies product information such as styles, sizes, quantities, and skus for the Front-End of an E-Commerce website
