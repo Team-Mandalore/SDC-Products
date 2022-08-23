@@ -1,10 +1,3 @@
-<div align="left">
-<img src="https://img.shields.io/github/package-json/dependency-version/SDC-Products/react" />
-<img src="https://img.shields.io/github/package-json/dependency-version/SDC-Products/webpack" />
-<img src="https://img.shields.io/github/package-json/dependency-version/SDC-Products/axios"/>
-<img src="https://img.shields.io/github/package-json/dependency-version/SDC-Products/nodemon"/>
-</div>
-
 # SDC-Products
 
 > The "Products" API service that supplies product information such as styles, sizes, quantities, and skus for the Front-End of an E-Commerce website
