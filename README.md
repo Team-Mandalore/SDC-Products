@@ -1,8 +1,8 @@
 <div align="left">
-<img src="https://img.shields.io/github/package-json/dependency-version/Team-Mandalore/SDC-Products/react" />
-<img src="https://img.shields.io/github/package-json/dependency-version/Team-Mandalore/SDC-Products/webpack" />
-<img src="https://img.shields.io/github/package-json/dependency-version/Team-Mandalore/SDC-Products/axios"/>
-<img src="https://img.shields.io/github/package-json/dependency-version/Team-Mandalore/SDC-Products/nodemon"/>
+<img src="https://img.shields.io/github/package-json/dependency-version/SDC-Products/react" />
+<img src="https://img.shields.io/github/package-json/dependency-version/SDC-Products/webpack" />
+<img src="https://img.shields.io/github/package-json/dependency-version/SDC-Products/axios"/>
+<img src="https://img.shields.io/github/package-json/dependency-version/SDC-Products/nodemon"/>
 </div>
 
 # SDC-Products
